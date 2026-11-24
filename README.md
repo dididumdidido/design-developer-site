@@ -26,3 +26,4 @@ npm run dev
 
 ## Included
 - `app/robots.ts`, `app/sitemap.ts`, `app/icon.png`, `app/opengraph-image.png` (share image), `app/not-found.tsx` (branded 404), `app/privacy/page.tsx`
+

@@ -1,8 +1,7 @@
 import type { Metadata, Viewport } from "next";
 
-// Self-hosted fonts: Fraunces for headings, Manrope for body.
-import "@fontsource-variable/fraunces";
-import "@fontsource-variable/manrope";
+// Self-hosted font: Inter for headings and body.
+import "@fontsource-variable/inter";
 
 import "./globals.css";
 import { ReferralCapture } from "@/components/site/referral-capture";

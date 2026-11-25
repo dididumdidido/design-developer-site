@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
 
 const base = "https://www.design-developer.com";
-const paths = ["/", "/digital-employees", "/how-it-works", "/pricing", "/results", "/about", "/blog", "/partners", "/book", "/privacy"];
+const paths = ["/", "/digital-employees", "/how-it-works", "/apps-and-websites", "/pricing", "/results", "/about", "/blog", "/partners", "/book", "/privacy"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = paths.map((p) => ({ url: `${base}${p}`, lastModified: new Date() }));

@@ -18,8 +18,8 @@
 }
 
 @theme inline {
-  --font-sans: "Manrope Variable", "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Fraunces Variable", "Fraunces", Georgia, serif;
+  --font-sans: "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -62,7 +62,8 @@
   }
   h1, h2, h3 {
     font-family: var(--font-display);
-    font-optical-sizing: auto;
+    letter-spacing: -0.03em;
+    font-weight: 600;
     @apply text-ink;
   }
   ::selection {
@@ -71,8 +72,8 @@
 }
 
 @layer components {
-  /* Holographic palette (lavender → pink → peach) */
-  /* Flat brand field (lavender), no blurred blobs */
+  /* Brand fields (neon yellow) */
+  
   .bg-holo-soft {
     background: #dfe06f;
   }
@@ -87,9 +88,21 @@
   }
 }
 
+/* 3D level icons: spin on hover, and once as they scroll into view */
+@keyframes icon-spin {
+  0% { transform: rotateY(0deg) translateY(0); }
+  45% { transform: rotateY(200deg) translateY(-6px) scale(1.08); }
+  100% { transform: rotateY(360deg) translateY(0) scale(1); }
+}
+.icon-3d { transform-style: preserve-3d; }
+.icon-spin-in { animation: icon-spin 1100ms cubic-bezier(0.45, 0, 0.2, 1) both; }
+@media (hover: hover) {
+  .group:hover .icon-3d { animation: icon-spin 900ms cubic-bezier(0.45, 0, 0.2, 1); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { transition: none !important; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
 }
 
 /* Blog post body */

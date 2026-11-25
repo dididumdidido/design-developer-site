@@ -22,7 +22,7 @@ export function Levels() {
           {levels.items.map((l, i) => (
             <li
               key={l.name}
-              className="group flex items-center gap-4 bg-white p-4 transition-colors duration-300 sm:block sm:p-5 [@media(hover:hover)]:hover:bg-tint"
+              className="group flex items-center gap-4 bg-white p-4 sm:block sm:p-5"
             >
               <span className="block shrink-0 [perspective:400px] sm:mb-3">
                 <Image

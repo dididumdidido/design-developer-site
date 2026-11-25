@@ -44,3 +44,5 @@ Post body in Markdown. Use ## for section headings, **bold**, - lists, and [link
 ```
 
 Publishing pipeline: the digital employee drafts → you approve (Slack / Notion) → it commits the `.md` file to `content/blog/` on the `main` branch of the GitHub repo → Vercel redeploys automatically. Set `draft: true` to hold a post. The sitemap, Google metadata and BlogPosting markup are generated automatically.
+
+

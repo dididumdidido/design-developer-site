@@ -21,7 +21,7 @@ export function Hero() {
             />
             <span className="text-[15px] font-medium text-ink">Adina Call, founder</span>
           </div>
-          <p className="mb-4 text-[15px] font-semibold text-primary">{hero.eyebrow}</p>
+          <p className="mb-4 text-[15px] font-semibold text-accent-ink">{hero.eyebrow}</p>
           <h1 className="display text-[2.5rem] leading-[1.04] sm:text-6xl lg:text-[4.25rem]">
             {hero.title.replace(hero.titleAccent, "")}
             <span className="text-holo">{hero.titleAccent}</span>

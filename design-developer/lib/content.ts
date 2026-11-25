@@ -106,6 +106,11 @@ export const pages = {
     title: "Pricing: Digital Employees from $1,000/year | Design Developer",
     description: "Transparent digital employee pricing, sized by the tools it works in. Nano to Large, pay annually or setup + month to month. No lock-in.",
   },
+  partners: {
+    path: "/partners",
+    title: "Partner Program: Earn 15% | Design Developer",
+    description: "Refer founders and owners to Design Developer and earn 15% of their first payment, plus 15% of every monthly payment while they stay on.",
+  },
   book: {
     path: "/book",
     title: "Book Your Free Strategy Call | Design Developer",
@@ -140,6 +145,29 @@ export const pricing = {
     { q: "Can I hire more than one?", a: "Yes. One job each, as many as your business needs. We recommend starting with the most painful job, proving it works, then adding the next. Larger teams are quoted case by case." },
     { q: "How long until it's live, and when will I see results?", a: "Most are built in about 2 weeks. Results usually show in 30 to 90 days, depending on the role." },
   ],
+};
+
+/** Partner (affiliate) program. */
+export const partners = {
+  title: "Partner program",
+  subtitle: "Know a founder, owner or creative who's drowning in busywork? Send them our way. When they hire a digital employee, you earn 15%.",
+  terms: [
+    { title: "15% of the first payment", text: "When your referral pays for a build, annually or with a setup fee, you earn 15% of that payment." },
+    { title: "15% of every monthly payment", text: "If they go month to month after setup, you earn 15% of each monthly payment for as long as that account stays on." },
+    { title: "Your own referral link", text: "You get a link like design-developer.com/?ref=YOURNAME. Anyone who books through it within 90 days is credited to you." },
+  ],
+  examples: [
+    { label: "They choose Small, paid annually", detail: "$2,000 build", earn: "$300" },
+    { label: "They choose Medium, setup + monthly", detail: "$2,000 setup, then $400/mo", earn: "$300, then $60/mo" },
+    { label: "They choose Large, setup + monthly", detail: "$4,000 setup, then $800/mo", earn: "$600, then $120/mo" },
+  ],
+  fine: [
+    "Commission is earned when the client you referred pays, and is based on our build and support fees (not running costs like AI usage).",
+    "Credit goes to the first partner link a client used, within 90 days of their first visit.",
+    "Please let your audience know you earn a commission when you share your link.",
+  ],
+  applySubject: "Partner program application",
+  applyBody: "Hi Adina, I'd like to join the Design Developer partner program.\n\nName:\nBusiness / audience:\nWebsite or social:\nPreferred referral code (e.g. AMY):",
 };
 
 /** Home page: short guide to the child pages. */
@@ -541,6 +569,7 @@ export const footer = {
     { label: "Results", href: "/results" },
     { label: "About", href: "/about" },
     { label: "Blog", href: "/blog" },
+    { label: "Partners", href: "/partners" },
     { label: "Book a Call", href: "/book" },
     { label: "FAQ", href: "/book#faq" },
     { label: "Privacy", href: "/privacy" },

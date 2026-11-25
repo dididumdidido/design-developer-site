@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Check, Mail } from "lucide-react";
 
+import { CalendlyEmbed } from "@/components/site/calendly-embed";
 import { BookButton, Container } from "@/components/site/shared";
 import { bookingPhoto, faq, finalCta, site } from "@/lib/content";
 
@@ -16,7 +17,7 @@ export function FaqBooking({ asPageTitle = false }: { asPageTitle?: boolean }) {
             <ul className="mt-5 space-y-3">
               {finalCta.bullets.map((b) => (
                 <li key={b} className="flex gap-3 text-[16px] leading-relaxed text-ink">
-                  <Check className="mt-1 size-4 shrink-0 text-primary" aria-hidden />
+                  <Check className="mt-1 size-4 shrink-0 text-accent-ink" aria-hidden />
                   {b}
                 </li>
               ))}
@@ -55,22 +56,17 @@ export function FaqBooking({ asPageTitle = false }: { asPageTitle?: boolean }) {
           {/* Calendar */}
           <div id="calendar">
             {site.calendarEmbedUrl ? (
-              <iframe
-                src={site.calendarEmbedUrl}
-                title="Book a strategy call with Adina Call"
-                className="h-[720px] w-full rounded-xl border border-border bg-white"
-                loading="lazy"
-              />
+              <CalendlyEmbed url={site.calendarEmbedUrl} />
             ) : (
               <div className="surface flex h-full flex-col items-start justify-center gap-5 bg-muted p-8 sm:p-10">
-                <Mail className="size-6 text-primary" aria-hidden />
+                <Mail className="size-6 text-accent-ink" aria-hidden />
                 <p className="display font-display text-2xl text-ink">Request your strategy call</p>
                 <p className="text-[16px] leading-relaxed text-soft">
                   Send a quick note with the busywork you want off your plate first, and Adina will reply with times
                   that work.
                 </p>
                 <BookButton />
-                <a href={`mailto:${site.email}`} className="py-2 text-[15px] font-medium text-primary hover:underline">
+                <a href={`mailto:${site.email}`} className="py-2 text-[15px] font-medium text-accent-ink hover:underline">
                   {site.email}
                 </a>
               </div>
@@ -80,7 +76,7 @@ export function FaqBooking({ asPageTitle = false }: { asPageTitle?: boolean }) {
 
         <div className="mx-auto mt-14 max-w-2xl border-t border-zinc-300/60 pt-8">
           <p className="font-display text-xl leading-relaxed text-ink sm:text-2xl">{finalCta.ps}</p>
-          <p className="mt-3 font-display text-lg font-semibold text-primary">{finalCta.signature}</p>
+          <p className="mt-3 font-display text-lg font-semibold text-accent-ink">{finalCta.signature}</p>
         </div>
       </Container>
     </section>

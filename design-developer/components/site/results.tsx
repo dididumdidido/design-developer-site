@@ -31,7 +31,7 @@ export function Results({ variant = "full" }: { variant?: "full" | "testimonials
                     href={c.website}
                     target="_blank"
                     rel="noopener"
-                    className="inline-block py-3 text-[14px] font-semibold text-primary hover:underline"
+                    className="inline-block py-3 text-[14px] font-semibold text-accent-ink hover:underline"
                   >
                     {c.website.replace("https://", "")} ↗
                   </a>
@@ -72,7 +72,7 @@ export function Results({ variant = "full" }: { variant?: "full" | "testimonials
             {quotes.map((t) => (
               <figure key={t.name} className="surface flex flex-col p-7">
                 {t.stars && (
-                  <p className="mb-3 text-lg tracking-[0.15em] text-primary" aria-label={`${t.stars} out of 5 stars`}>
+                  <p className="mb-3 text-lg tracking-[0.15em] text-accent-ink" aria-label={`${t.stars} out of 5 stars`}>
                     {"★".repeat(t.stars)}
                   </p>
                 )}
@@ -98,7 +98,7 @@ export function Results({ variant = "full" }: { variant?: "full" | "testimonials
                     <span className="block font-semibold text-ink">{t.name}</span>
                     <span className="text-soft">
                       {t.website ? (
-                        <a href={t.website} target="_blank" rel="noopener" className="underline-offset-2 hover:text-primary hover:underline">
+                        <a href={t.website} target="_blank" rel="noopener" className="underline-offset-2 hover:text-accent-ink hover:underline">
                           {[t.business, t.city].filter(Boolean).join(", ")}
                         </a>
                       ) : (

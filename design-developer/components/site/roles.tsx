@@ -24,10 +24,10 @@ export function Roles() {
                 </div>
                 <p className="mt-2 max-w-md text-[16px] leading-relaxed text-soft">{r.does}</p>
               </div>
-              <figure className={"rounded-xl p-5 " + ("real" in r.sample ? "border border-primary/25 bg-tint" : "bg-muted")}>
+              <figure className={"rounded-xl p-5 " + ("real" in r.sample ? "border border-[#c8dc5e] bg-tint" : "bg-muted")}>
                 <figcaption
                   className={
-                    "text-[13px] font-semibold " + ("real" in r.sample ? "text-primary" : "text-soft")
+                    "text-[13px] font-semibold " + ("real" in r.sample ? "text-accent-ink" : "text-soft")
                   }
                 >
                   {"real" in r.sample ? r.sample.kind : `Example: ${r.sample.kind.charAt(0).toLowerCase() + r.sample.kind.slice(1)}`}
@@ -38,7 +38,7 @@ export function Roles() {
                     href={r.sample.link}
                     target="_blank"
                     rel="noopener"
-                    className="mt-1 inline-block py-3 text-[14px] font-semibold text-primary hover:underline"
+                    className="mt-1 inline-block py-3 text-[14px] font-semibold text-accent-ink hover:underline"
                   >
                     See it live ↗
                   </a>

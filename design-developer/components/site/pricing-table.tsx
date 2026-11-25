@@ -32,11 +32,11 @@ export function PricingTable() {
                 onClick={() => setMode(o.id as "annual" | "monthly")}
                 className={cn(
                   "min-h-11 rounded px-4 text-left text-[14px] font-semibold transition-colors",
-                  mode === o.id ? "bg-primary text-white" : "text-body [@media(hover:hover)]:hover:bg-muted"
+                  mode === o.id ? "bg-ink text-neon" : "text-body [@media(hover:hover)]:hover:bg-muted"
                 )}
               >
                 {o.label}
-                <span className={cn("ml-2 hidden text-[12px] font-medium sm:inline", mode === o.id ? "text-white/85" : "text-soft")}>{o.hint}</span>
+                <span className={cn("ml-2 hidden text-[12px] font-medium sm:inline", mode === o.id ? "text-neon/85" : "text-soft")}>{o.hint}</span>
               </button>
             ))}
           </div>
@@ -49,7 +49,7 @@ export function PricingTable() {
             <li key={t.name} className="flex flex-col rounded-xl border border-border bg-white p-6">
               <div className="flex items-baseline justify-between gap-2">
                 <h2 className="display text-2xl">{t.name}</h2>
-                <span className="text-[13px] font-semibold text-primary">{t.tools}</span>
+                <span className="text-[13px] font-semibold text-accent-ink">{t.tools}</span>
               </div>
 
               <div className="mt-5 min-h-[92px]">
@@ -99,12 +99,12 @@ export function PricingTable() {
         </ul>
 
         {/* Included in every build */}
-        <div className="mt-6 rounded-xl border border-primary/25 bg-tint p-6 sm:p-8">
+        <div className="mt-6 rounded-xl border border-[#c8dc5e] bg-tint p-6 sm:p-8">
           <h2 className="display text-2xl">Included with every digital employee</h2>
           <ul className="mt-5 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
             {pricing.included.map((i) => (
               <li key={i} className="flex gap-3 text-[15px] text-ink">
-                <Check className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
+                <Check className="mt-0.5 size-4 shrink-0 text-accent-ink" aria-hidden />
                 {i}
               </li>
             ))}

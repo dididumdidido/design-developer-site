@@ -45,4 +45,8 @@ Post body in Markdown. Use ## for section headings, **bold**, - lists, and [link
 
 Publishing pipeline: the digital employee drafts → you approve (Slack / Notion) → it commits the `.md` file to `content/blog/` on the `main` branch of the GitHub repo → Vercel redeploys automatically. Set `draft: true` to hold a post. The sitemap, Google metadata and BlogPosting markup are generated automatically.
 
-
+## Partner program (referral links)
+Give each partner a code, e.g. AMY → `https://www.design-developer.com/?ref=AMY` (any page works).
+The code is saved for 90 days (first referrer wins). When that visitor books on /book, Calendly receives
+`utm_source=partner&utm_campaign=AMY` — you'll see it in the booking details and in Calendly's routing/reporting.
+Terms and examples live in `partners` in `lib/content.ts`.

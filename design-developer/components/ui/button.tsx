@@ -9,10 +9,10 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground [@media(hover:hover)]:hover:bg-primary-hover",
+        default: "bg-ink text-neon [@media(hover:hover)]:hover:bg-black",
         outline: "border border-zinc-300 bg-white text-ink [@media(hover:hover)]:hover:border-zinc-400 [@media(hover:hover)]:hover:bg-zinc-50",
         ghost: "text-body hover:bg-muted hover:text-ink",
-        link: "text-primary underline-offset-4 hover:underline",
+        link: "text-accent-ink underline-offset-4 hover:underline",
       },
       size: {
         default: "h-11 px-6",

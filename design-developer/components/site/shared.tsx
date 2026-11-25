@@ -51,7 +51,7 @@ export function BookButton({
 export function Wordmark({ className }: { className?: string }) {
   return (
     <span className={cn("flex items-center gap-2.5 whitespace-nowrap", className)}>
-      <Image src="/brand/dd-mark-violet.png" alt="" width={376} height={482} className="h-8 w-auto" priority />
+      <Image src="/brand/dd-mark-black.png" alt="" width={600} height={767} className="h-8 w-auto" priority />
       <span className="font-display text-[1.2rem] font-semibold tracking-[-0.02em] text-ink">Design Developer</span>
     </span>
   );

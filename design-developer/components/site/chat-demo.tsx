@@ -65,7 +65,7 @@ export function ChatDemo() {
           <div className="rounded-lg border border-border bg-white p-4 sm:p-5">
             <div className="flex items-center justify-between border-b border-border px-1 pb-3">
               <div className="flex items-center gap-2.5">
-                <span className="grid size-9 place-items-center rounded-full bg-tint text-[13px] font-semibold text-primary">S</span>
+                <span className="grid size-9 place-items-center rounded-full bg-tint text-[13px] font-semibold text-accent-ink">S</span>
                 <div className="leading-tight">
                   <p className="text-[14px] font-semibold text-ink">Sarah · New lead</p>
                   <p className="text-[12px] text-soft">Text message</p>
@@ -90,7 +90,7 @@ export function ChatDemo() {
                   <p
                     className={cn(
                       "inline-block rounded-2xl px-4 py-2.5 text-left text-[15px] leading-snug",
-                      m.from === "de" ? "rounded-br-md bg-primary text-white" : "rounded-bl-md bg-muted text-ink"
+                      m.from === "de" ? "rounded-br-md bg-primary text-ink" : "rounded-bl-md bg-muted text-ink"
                     )}
                   >
                     {m.text}
@@ -106,7 +106,7 @@ export function ChatDemo() {
                     {[0, 1, 2].map((d) => (
                       <span
                         key={d}
-                        className="size-1.5 animate-pulse rounded-full bg-primary"
+                        className="size-1.5 animate-pulse rounded-full bg-ink"
                         style={{ animationDelay: `${d * 120}ms` }}
                       />
                     ))}
@@ -121,7 +121,7 @@ export function ChatDemo() {
                 shown > total ? "opacity-100" : "opacity-0"
               )}
             >
-              <Check className="size-4 shrink-0 text-primary" aria-hidden />
+              <Check className="size-4 shrink-0 text-accent-ink" aria-hidden />
               {chatDemo.status}
             </p>
           </div>

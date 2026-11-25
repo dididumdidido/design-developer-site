@@ -21,54 +21,66 @@ export function Results({ variant = "full" }: { variant?: "full" | "testimonials
         )}
 
         {showCases && caseStudies.length > 0 && (
-          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {caseStudies.map((c) => (
-              <article key={c.client} className="surface flex flex-col p-7 sm:p-9">
-                <p className="text-[14px] font-medium text-soft">{c.business}</p>
-                <h3 className="display mt-1 text-2xl">{c.client}</h3>
-                {c.website && (
-                  <a
-                    href={c.website}
-                    target="_blank"
-                    rel="noopener"
-                    className="inline-block py-3 text-[14px] font-semibold text-accent-ink hover:underline"
-                  >
-                    {c.website.replace("https://", "")} ↗
-                  </a>
-                )}
-                <ul className="mt-6 space-y-3">
-                  {c.results.map((r) => (
-                    <li key={r} className="rounded-lg bg-tint px-4 py-3 font-display text-lg font-semibold leading-snug text-ink">
-                      <CountUp text={r} />
-                    </li>
-                  ))}
-                </ul>
-                <dl className="mt-6 space-y-4 text-[15px] leading-relaxed">
-                  <div>
-                    <dt className="font-semibold text-ink">The problem</dt>
-                    <dd className="text-soft">{c.problem}</dd>
+          <div className="mt-12 space-y-16 lg:space-y-24">
+            {caseStudies.map((c, i) => (
+              <article key={c.client} className="grid items-start gap-8 lg:grid-cols-2 lg:gap-14">
+                {c.cover && (
+                  <div className={i % 2 === 1 ? "lg:order-last" : ""}>
+                    <WorkImg img={c.cover} className="aspect-[16/10]" sizes="(min-width: 1024px) 540px, 92vw" />
+                    {c.gallery && c.gallery.length > 0 && (
+                      <div className={"mt-3 grid gap-3 " + (c.gallery.length === 1 ? "grid-cols-2" : "grid-cols-2")}>
+                        {c.gallery.map((g) => (
+                          <WorkImg key={g.src} img={g} className="aspect-[4/3]" sizes="(min-width: 1024px) 265px, 45vw" />
+                        ))}
+                      </div>
+                    )}
                   </div>
-                  <div>
-                    <dt className="font-semibold text-ink">What we built</dt>
-                    <dd className="text-soft">{c.built}</dd>
-                  </div>
-                </dl>
-                {c.photo && (
-                  <Image
-                    src={c.photo.src}
-                    alt={c.photo.alt}
-                    width={c.photo.width}
-                    height={c.photo.height}
-                    className="mt-6 w-full rounded-lg border border-border"
-                  />
                 )}
+                <div className="lg:pt-2">
+                  <p className="text-[14px] font-medium text-soft">{c.business}</p>
+                  <h3 className="mt-1 text-[1.9rem] leading-tight">{c.client}</h3>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {c.services.map((t) => (
+                      <span key={t} className="rounded-full border border-ink px-3 py-1 text-[12px] font-semibold uppercase tracking-[0.08em] text-ink">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <ul className="mt-6 space-y-3">
+                    {c.results.map((r) => (
+                      <li key={r} className="rounded-lg bg-tint px-4 py-3 text-lg font-semibold leading-snug text-ink">
+                        <CountUp text={r} />
+                      </li>
+                    ))}
+                  </ul>
+                  <dl className="mt-6 space-y-4 text-[16px] leading-relaxed">
+                    <div>
+                      <dt className="font-semibold text-ink">The problem</dt>
+                      <dd className="text-soft">{c.problem}</dd>
+                    </div>
+                    <div>
+                      <dt className="font-semibold text-ink">What we built</dt>
+                      <dd className="text-soft">{c.built}</dd>
+                    </div>
+                  </dl>
+                  {c.website && (
+                    <a
+                      href={c.website}
+                      target="_blank"
+                      rel="noopener"
+                      className="mt-3 inline-block py-3 text-[15px] font-semibold text-accent-ink hover:underline"
+                    >
+                      Visit {c.website.replace("https://", "")} ↗
+                    </a>
+                  )}
+                </div>
               </article>
             ))}
           </div>
         )}
 
         {quotes.length > 0 && (
-          <div className={(showCases ? "mt-5" : "mt-10") + " grid gap-5 " + (quotes.length === 1 ? "" : quotes.length === 2 ? "md:grid-cols-2" : "md:grid-cols-2 lg:grid-cols-3")}>
+          <div className={(showCases ? "mt-20" : "mt-10") + " grid gap-5 " + (quotes.length === 1 ? "" : quotes.length === 2 ? "md:grid-cols-2" : "md:grid-cols-2 lg:grid-cols-3")}>
             {quotes.map((t) => (
               <figure key={t.name} className="surface flex flex-col p-7">
                 {t.stars && (
@@ -114,5 +126,29 @@ export function Results({ variant = "full" }: { variant?: "full" | "testimonials
         )}
       </Container>
     </section>
+  );
+}
+
+function WorkImg({
+  img,
+  className,
+  sizes,
+}: {
+  img: { src: string; alt: string; width: number; height: number; fit?: "cover" | "contain" };
+  className?: string;
+  sizes: string;
+}) {
+  const contain = img.fit === "contain";
+  return (
+    <div className={"overflow-hidden rounded-xl border border-border " + (contain ? "bg-muted p-3 " : "bg-white ") + (className ?? "")}>
+      <Image
+        src={img.src}
+        alt={img.alt}
+        width={img.width}
+        height={img.height}
+        sizes={sizes}
+        className={"h-full w-full " + (contain ? "object-contain" : "object-cover object-top")}
+      />
+    </div>
   );
 }

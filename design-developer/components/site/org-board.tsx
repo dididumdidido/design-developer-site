@@ -27,7 +27,7 @@ export function OrgBoard() {
         <path
           d={`M500 0 V20 M100 20 H900 ${Array.from({ length: n }, (_, i) => `M${100 + (800 / (n - 1)) * i} 20 V48`).join(" ")}`}
           fill="none"
-          stroke="#c4b5fd"
+          stroke="#b5b300"
           strokeWidth="2"
           vectorEffect="non-scaling-stroke"
           pathLength={1}
@@ -36,7 +36,7 @@ export function OrgBoard() {
           style={{ transition: "stroke-dashoffset 900ms ease-out" }}
         />
       </svg>
-      <div className="mx-auto my-3 h-6 w-px bg-[#c4b5fd] md:hidden" aria-hidden />
+      <div className="mx-auto my-3 h-6 w-px bg-[#b5b300] md:hidden" aria-hidden />
 
       {/* Seats */}
       <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">

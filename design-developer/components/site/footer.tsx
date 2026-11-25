@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { Container } from "@/components/site/shared";
-import { agencyLine, footer, site } from "@/lib/content";
+import { agencyLine, agencyLink, footer, personalSite, site } from "@/lib/content";
 
 export function Footer() {
   return (
@@ -18,11 +18,8 @@ export function Footer() {
             />
             <p className="mt-3 text-[15px] leading-relaxed text-zinc-300">{footer.tagline}</p>
             <p className="mt-3 text-[15px] leading-relaxed text-zinc-300">{agencyLine}</p>
-            <a
-              href={`mailto:${site.email}?subject=${encodeURIComponent("Agency services")}`}
-              className="inline-block py-3 text-[15px] font-medium text-neon hover:underline"
-            >
-              Ask about agency work
+            <a href={agencyLink.href} className="inline-block py-3 text-[15px] font-medium text-neon hover:underline">
+              {agencyLink.label}
             </a>
           </div>
           <nav aria-label="Footer" className="flex flex-col md:items-end">
@@ -37,7 +34,12 @@ export function Footer() {
           </nav>
         </div>
         <div className="mt-10 flex flex-col justify-between gap-4 border-t border-zinc-700 pt-6 text-[13px] text-zinc-400 sm:flex-row sm:items-center">
-          <p>© {new Date().getFullYear()} Design Developer LLC. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} Design Developer LLC. All rights reserved. Founded by Adina Call ·{" "}
+            <a href={personalSite.href} target="_blank" rel="noopener" className="text-zinc-300 underline-offset-2 hover:text-neon hover:underline">
+              {personalSite.label}
+            </a>
+          </p>
           <Image
             src="/brand/women-owned-business-white.png"
             alt="Women Owned Business"

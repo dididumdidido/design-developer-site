@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+/* ---------- Design tokens ---------- */
+:root {
+  --radius: 1rem;
+
+  --background: #fafafa;
+  --foreground: #18181b;
+  --card: #ffffff;
+  --card-foreground: #18181b;
+  --primary: #8641f0; /* logo violet: white text = 5.2:1 */
+  --primary-hover: #6d28d9;
+  --primary-foreground: #ffffff;
+  --muted: #f4f4f5;
+  --muted-foreground: #52525b;
+  --border: #e4e4e7;
+  --ring: #8641f0;
+}
+
+@theme inline {
+  --font-sans: "Manrope Variable", "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces Variable", "Fraunces", Georgia, serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+
+  --color-ink: #18181b;
+  --color-body: #3f3f46;
+  --color-soft: #52525b;
+  --color-brand: #8641f0;
+  --color-tint: #f5f3ff; /* very light violet, for one highlight per section */
+
+  --radius-sm: 2px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+  --radius-xl: 12px;
+  --radius-2xl: 12px;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+  body {
+    @apply bg-background font-sans text-body antialiased;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    @apply text-ink;
+  }
+  ::selection {
+    background: rgb(134 65 240 / 0.15);
+  }
+}
+
+@layer components {
+  /* Holographic palette (lavender → pink → peach) */
+  /* Flat brand field (lavender), no blurred blobs */
+  .bg-holo-soft {
+    background: #f6f1ff;
+  }
+  .bg-holo-panel {
+    background: linear-gradient(120deg, #efe4ff 0%, #fbe3f1 50%, #ffe8d6 100%);
+  }
+  .text-holo {
+    background: linear-gradient(100deg, #7c3aed 0%, #db2777 55%, #ea580c 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .surface {
+    @apply rounded-xl border border-border bg-card;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
+
+/* Blog post body */
+.post-body { font-size: 18px; line-height: 1.75; color: var(--color-body); }
+.post-body > * + * { margin-top: 1.1em; }
+.post-body h2 { font-family: var(--font-display); font-size: 1.75rem; line-height: 1.2; font-weight: 500; color: var(--color-ink); margin-top: 2em; }
+.post-body h3 { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; color: var(--color-ink); margin-top: 1.6em; }
+.post-body strong { color: var(--color-ink); font-weight: 600; }
+.post-body a { color: var(--color-primary); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.post-body ul { list-style: disc; padding-left: 1.3em; }
+.post-body ol { list-style: decimal; padding-left: 1.3em; }
+.post-body li + li { margin-top: 0.4em; }
+.post-body li::marker { color: var(--color-primary); }
+.post-body blockquote { border-left: 3px solid var(--color-primary); padding-left: 1em; font-family: var(--font-display); font-size: 1.25rem; color: var(--color-ink); }
+.post-body img { border-radius: 12px; border: 1px solid var(--color-border); }

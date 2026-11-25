@@ -45,10 +45,18 @@ export default function Privacy() {
               </p>
             </section>
             <section>
+              <h2>Referral links</h2>
+              <p>
+                If you arrive through a partner&rsquo;s referral link, your browser stores that partner&rsquo;s code for 90 days
+                so we can credit them if you book a call. It contains no personal information and is passed to our booking
+                calendar only as a referral tag.
+              </p>
+            </section>
+            <section>
               <h2>Your choices</h2>
               <p>
                 You can ask us to see, correct or delete the information we hold about you by emailing{" "}
-                <a href={`mailto:${site.email}`} className="font-medium text-primary hover:underline">
+                <a href={`mailto:${site.email}`} className="font-medium text-accent-ink hover:underline">
                   {site.email}
                 </a>
                 .

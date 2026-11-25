@@ -49,7 +49,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       <article>
         <header className="bg-holo-soft pb-10 pt-10 sm:pt-14 lg:pb-14 lg:pt-16">
           <Container className="max-w-3xl">
-            <a href="/blog" className="inline-block py-3 text-[15px] font-semibold text-primary hover:underline">
+            <a href="/blog" className="inline-block py-3 text-[15px] font-semibold text-accent-ink hover:underline">
               Blog
             </a>
             <h1 className="display mt-2 text-[2.2rem] leading-[1.08] sm:text-5xl">{post.title}</h1>
@@ -74,7 +74,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             <ul className="mt-6 space-y-2">
               {others.map((o) => (
                 <li key={o.slug}>
-                  <a href={`/blog/${o.slug}`} className="block py-3 font-display text-xl text-ink hover:text-primary">
+                  <a href={`/blog/${o.slug}`} className="block py-3 font-display text-xl text-ink hover:text-accent-ink">
                     {o.title}
                   </a>
                 </li>

@@ -5,6 +5,7 @@ import "@fontsource-variable/fraunces";
 import "@fontsource-variable/manrope";
 
 import "./globals.css";
+import { ReferralCapture } from "@/components/site/referral-capture";
 import { seo, site } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -27,7 +28,10 @@ export const viewport: Viewport = { themeColor: "#fafafa" };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ReferralCapture />
+        {children}
+      </body>
     </html>
   );
 }

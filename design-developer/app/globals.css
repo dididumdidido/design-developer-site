@@ -8,13 +8,13 @@
   --foreground: #18181b;
   --card: #ffffff;
   --card-foreground: #18181b;
-  --primary: #8641f0; /* logo violet: white text = 5.2:1 */
-  --primary-hover: #6d28d9;
-  --primary-foreground: #ffffff;
+  --primary: #e6fb81; /* bright neon highlight (Adina: #E6FB81), always with ink text */
+  --primary-hover: #d8f05f;
+  --primary-foreground: #18181b;
   --muted: #f4f4f5;
   --muted-foreground: #52525b;
   --border: #e4e4e7;
-  --ring: #8641f0;
+  --ring: #18181b;
 }
 
 @theme inline {
@@ -36,8 +36,11 @@
   --color-ink: #18181b;
   --color-body: #3f3f46;
   --color-soft: #52525b;
-  --color-brand: #8641f0;
-  --color-tint: #f5f3ff; /* very light violet, for one highlight per section */
+  --color-brand: #18181b;
+  --color-accent-ink: #4a4c00; /* dark olive for small accent text: 9:1 on white, 5.8:1 on neon */
+  --color-neon: #e6fb81;
+  --color-neon-field: #dfe06f; /* section backgrounds (Adina: #DFE06F) */
+  --color-tint: #f4fbd6; /* pale neon, for one highlight per section */
 
   --radius-sm: 2px;
   --radius-md: 6px;
@@ -63,7 +66,7 @@
     @apply text-ink;
   }
   ::selection {
-    background: rgb(134 65 240 / 0.15);
+    background: rgb(230 251 129 / 0.7);
   }
 }
 
@@ -71,16 +74,13 @@
   /* Holographic palette (lavender → pink → peach) */
   /* Flat brand field (lavender), no blurred blobs */
   .bg-holo-soft {
-    background: #f6f1ff;
+    background: #dfe06f;
   }
   .bg-holo-panel {
-    background: linear-gradient(120deg, #efe4ff 0%, #fbe3f1 50%, #ffe8d6 100%);
+    background: #f4fbd6;
   }
   .text-holo {
-    background: linear-gradient(100deg, #7c3aed 0%, #db2777 55%, #ea580c 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--color-ink);
   }
   .surface {
     @apply rounded-xl border border-border bg-card;
@@ -98,10 +98,10 @@
 .post-body h2 { font-family: var(--font-display); font-size: 1.75rem; line-height: 1.2; font-weight: 500; color: var(--color-ink); margin-top: 2em; }
 .post-body h3 { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; color: var(--color-ink); margin-top: 1.6em; }
 .post-body strong { color: var(--color-ink); font-weight: 600; }
-.post-body a { color: var(--color-primary); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.post-body a { color: var(--color-ink); text-decoration-color: var(--color-neon); text-decoration-thickness: 3px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 .post-body ul { list-style: disc; padding-left: 1.3em; }
 .post-body ol { list-style: decimal; padding-left: 1.3em; }
 .post-body li + li { margin-top: 0.4em; }
-.post-body li::marker { color: var(--color-primary); }
-.post-body blockquote { border-left: 3px solid var(--color-primary); padding-left: 1em; font-family: var(--font-display); font-size: 1.25rem; color: var(--color-ink); }
+.post-body li::marker { color: var(--color-ink); }
+.post-body blockquote { border-left: 4px solid var(--color-neon); padding-left: 1em; font-family: var(--font-display); font-size: 1.25rem; color: var(--color-ink); }
 .post-body img { border-radius: 12px; border: 1px solid var(--color-border); }

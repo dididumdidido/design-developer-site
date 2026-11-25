@@ -30,9 +30,9 @@ export default function BlogIndex() {
                       {p.readingMinutes} min read
                     </p>
                     <div>
-                      <h2 className="display text-2xl leading-snug group-hover:text-primary sm:text-[1.75rem]">{p.title}</h2>
+                      <h2 className="display text-2xl leading-snug group-hover:text-accent-ink sm:text-[1.75rem]">{p.title}</h2>
                       <p className="mt-2 max-w-2xl text-[16px] leading-relaxed text-soft">{p.description}</p>
-                      <p className="mt-3 text-[15px] font-semibold text-primary">Read the post</p>
+                      <p className="mt-3 text-[15px] font-semibold text-accent-ink">Read the post</p>
                     </div>
                   </a>
                 </li>

@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { Container } from "@/components/site/shared";
-import { about, aboutPhoto, awardsPhotos } from "@/lib/content";
+import { about, aboutPhoto, awardsPhotos, personalSite } from "@/lib/content";
 
 export function About({ asPageTitle = false }: { asPageTitle?: boolean }) {
   const H = asPageTitle ? "h1" : "h2";
@@ -23,6 +23,13 @@ export function About({ asPageTitle = false }: { asPageTitle?: boolean }) {
               {p}
             </p>
           ))}
+          <p className="mt-5 text-lg leading-relaxed text-soft">
+            More of my story, and my brand and website work, lives at{" "}
+            <a href={personalSite.href} target="_blank" rel="noopener" className="font-semibold text-ink underline decoration-neon decoration-[3px] underline-offset-[3px]">
+              {personalSite.label}
+            </a>
+            .
+          </p>
           <p className="mt-8 font-display text-lg font-semibold text-ink">{about.signature}</p>
 
           {awardsPhotos.length > 0 && (

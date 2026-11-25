@@ -33,15 +33,17 @@ export function BookButton({
   size = "lg",
   className,
   arrow = true,
+  label,
 }: {
   size?: "sm" | "default" | "lg";
   className?: string;
   arrow?: boolean;
+  label?: string;
 }) {
   return (
     <Button asChild size={size} className={className}>
       <a href={bookingHref}>
-        {site.ctaLabel}
+        {label ?? site.ctaLabel}
         {arrow && <ArrowRight aria-hidden />}
       </a>
     </Button>

@@ -12,12 +12,12 @@ export function Nav() {
           <Wordmark />
         </a>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center xl:flex" aria-label="Primary">
           {nav.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="whitespace-nowrap rounded-md px-3 py-3 text-[14px] font-medium text-soft transition-colors hover:text-ink xl:px-4"
+              className="whitespace-nowrap rounded-md px-2.5 py-3 text-[14px] font-medium text-soft transition-colors hover:text-ink"
             >
               {item.label}
             </a>
@@ -25,8 +25,8 @@ export function Nav() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <BookButton size="sm" arrow={false} className="hidden sm:inline-flex" />
-          <details className="group relative lg:hidden">
+          <BookButton size="sm" arrow={false} label="Book a Free Call" className="hidden sm:inline-flex" />
+          <details className="group relative xl:hidden">
             <summary
               className="grid size-11 cursor-pointer list-none place-items-center rounded-full text-ink hover:bg-muted [&::-webkit-details-marker]:hidden"
               aria-label="Menu"

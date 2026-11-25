@@ -111,6 +111,11 @@ export const pages = {
     title: "Partner Program: Earn 15% | Design Developer",
     description: "Refer founders and owners to Design Developer and earn 15% of their first payment, plus 15% of every monthly payment while they stay on.",
   },
+  apps: {
+    path: "/apps-and-websites",
+    title: "App & Website Development | Design Developer",
+    description: "Custom apps, websites and funnels for founders and owners. Mobile-first, SEO-ready, and built to work with your digital employees.",
+  },
   book: {
     path: "/book",
     title: "Book Your Free Strategy Call | Design Developer",
@@ -176,6 +181,7 @@ export const explore = {
   items: [
     { title: "Digital Employees", text: "The roles you can hire, how each one grows, and how they compare to AI bots and VAs.", href: "/digital-employees" },
     { title: "How It Works", text: "Two ways to work together, the three steps, and where they sit on your org board.", href: "/how-it-works" },
+    { title: "Apps & Websites", text: "Custom apps, websites and funnels, built to work with your digital employees.", href: "/apps-and-websites" },
     { title: "Pricing", text: "Transparent pricing by size, from $1,000 a year per digital employee. No lock-in.", href: "/pricing" },
     { title: "Results", text: "Case studies and client stories, with real numbers.", href: "/results" },
     { title: "Blog", text: "Practical posts on digital employees, KPIs and AI as support.", href: "/blog" },
@@ -186,6 +192,7 @@ export const explore = {
 export const nav = [
   { label: "Digital Employees", href: "/digital-employees" },
   { label: "How It Works", href: "/how-it-works" },
+  { label: "Apps & Web", href: "/apps-and-websites" },
   { label: "Pricing", href: "/pricing" },
   { label: "Results", href: "/results" },
   { label: "About", href: "/about" },
@@ -443,37 +450,93 @@ export const resultsIntro = {
   subtitle: "Brands, websites, offers and marketing I've built for clients and my own companies. The same playbook now runs inside your digital employees.",
 };
 
+type WorkImage = Photo & { fit?: "cover" | "contain" };
+
 export const caseStudies: {
   client: string;
   business: string;
+  services: string[];
   website?: string;
   problem: string;
   built: string;
   results: string[];
+  cover?: WorkImage;
+  gallery?: WorkImage[];
   photo?: Photo;
 }[] = [
   {
-    client: "Cell Regen",
-    business: "My own wellness clinic · Hood River, OR",
-    website: "https://cellregenwellness.com",
-    problem: "A new holistic clinic launching during COVID, when wellness was far less mainstream.",
-    built: "The brand, website and organic social strategy, and now its first digital employee: an SEO Manager publishing articles.",
-    results: ["1.5M+ views on one video", "10,000 new followers from a single viral video"],
-  },
-  {
     client: "NEU Wellness · Dr. Ali Hamtaee",
     business: "Two-location chiropractic practice · Florida",
+    services: ["Branding", "Web development", "Lead generation"],
     website: "https://neuwc.com",
-    problem: "Built around personal injury and insurance collections, the practice wanted to return to its wellness roots.",
-    built: "Brand relaunch, new wellness services, a social and content framework, and Facebook and Instagram lead generation.",
+    problem: "An established personal injury practice, built around insurance collections, that wanted to return to its roots in wellness and holistic care.",
+    built: "A brand relaunch and new website, new wellness services and technology beyond traditional chiropractic, a social and content framework, and Facebook and Instagram lead generation. Plus a plan to reactivate past patients.",
     results: ["175+ leads from Facebook and Instagram campaigns", "Moved from insurance collections to a cash-based wellness center"],
+    cover: { src: "/images/work/neu-brand-board.jpg", alt: "NEU Wellness brand board: logo variations, business cards, packaging, social posts and a branded reception area", width: 1162, height: 690 },
+    gallery: [
+      { src: "/images/work/neu-logo.jpg", alt: "NEU Wellness gold logo on a lavender to blue gradient with the tagline Your Wellness, Reimagined", width: 729, height: 723 },
+      { src: "/images/work/neu-wellness-site.jpg", alt: "NEU Wellness website home page", width: 1200, height: 675 },
+    ],
+  },
+  {
+    client: "Cell Regen",
+    business: "My own wellness clinic · Hood River, OR",
+    services: ["Web development", "Branding", "Social media strategy"],
+    website: "https://cellregenwellness.com",
+    problem: "A new holistic clinic launching during COVID, when wellness was far less mainstream.",
+    built: "The brand, the website and an organic social strategy with consistent messaging, and now its first digital employee: an SEO Manager publishing articles.",
+    results: ["1.5M+ views on one video", "10,000 new followers from a single viral video", "5.0 stars on Google from 117 reviews"],
+    cover: { src: "/images/work/cell-regen-site.jpg", alt: "Cell Regen website home page", width: 1200, height: 675 },
+    gallery: [
+      { src: "/images/work/cell-regen-content.jpg", alt: "Cell Regen social post: Dark Showering vs. Red Light Therapy", width: 540, height: 723, fit: "contain" },
+      { src: "/images/work/cell-regen-reviews.jpg", alt: "Cell Regen Google profile showing 5.0 stars from 117 reviews", width: 780, height: 522, fit: "contain" },
+    ],
   },
   {
     client: "Dr. Bryan Call",
     business: "My husband's chiropractic and regenerative clinic",
-    problem: "Needed a cash-based offer to fund medical staff and expand the practice.",
-    built: "A new offer, an in-person event strategy, a dedicated Facebook ad, a sales page and a front-desk follow-up system.",
+    services: ["Offer", "Facebook ads", "In-person events"],
+    problem: "A chiropractic clinic with a personal injury and medical integration model that needed a cash-based offer to hire more medical staff and expand.",
+    built: "A new offer, an in-person event strategy, a dedicated Facebook ad for the events, a sales page and a front-desk follow-up system.",
     results: ["Six-figure gross profit in 30 days", "$18K to $139K a month in under 9 months"],
+    cover: { src: "/images/work/dr-call-clinic.jpg", alt: "Dr. Bryan Call smiling in his clinic", width: 1081, height: 723 },
+  },
+  {
+    client: "The Goat Soap Co.",
+    business: "Family homestead skin care · White Salmon, WA",
+    services: ["Branding", "Brand strategy"],
+    problem: "Jana, a homestead mom and founder, was overwhelmed after a failed business partnership, with inventory that needed to fly off the shelf.",
+    built: "We turned her vision into a clear brand strategy and a fresh, clean look she can sell with online, with integrity and family at the heart.",
+    results: ["A farm business refreshed into a clean new brand", "She stepped into her role as mother, founder and entrepreneur"],
+    cover: { src: "/images/work/goat-soap-brand-direction.jpg", alt: "Goat Soap Co. brand direction board: soft coral and teal palette, Modern Vintage type and packaging references", width: 1244, height: 692 },
+    gallery: [{ src: "/images/work/goat-soap-logo.jpg", alt: "Goat Soap Co. logo: a hand-drawn goat with Founded 2013, White Salmon, Washington", width: 585, height: 605, fit: "contain" }],
+  },
+  {
+    client: "Adventure Onward Fitness",
+    business: "Postural correction and functional strength coaching",
+    services: ["Branding", "Brand strategy"],
+    problem: "A coach whose work goes far beyond reps and machines needed a brand that said more than \"just fitness\" and spoke to achievers who live for adventure.",
+    built: "A brand strategy and voice built around posture, mobility and adventure, a tagline, and a visual direction rooted in the outdoors.",
+    results: ["Tagline: \"Revolutionizing fitness mechanics.\"", "A brand that says more than \"just fitness\""],
+    cover: { src: "/images/work/aof-brand-direction.jpg", alt: "Adventure Onward Fitness brand direction board: earthy greens and golds, forest and movement photography, Beattle and Ukiyo type", width: 1280, height: 720 },
+  },
+  {
+    client: "Xara-Xara",
+    business: "Plant medicine healing retreat",
+    services: ["Branding", "Brand strategy"],
+    problem: "A retreat led by female guides needed a brand that felt safe, sacred and transparent, without sounding like a clinic or a facility.",
+    built: "A brand strategy and voice centered on safety, integrity and connection, a tagline, and a warm, botanical visual direction.",
+    results: ["Tagline: \"Transforming trauma, thoughts and toxins.\"", "A brand that feels safe and sacred, not clinical"],
+    cover: { src: "/images/work/xara-brand-direction.jpg", alt: "Xara-Xara brand direction board: terracotta, red and deep green palette with botanical and line-art imagery", width: 1280, height: 720 },
+  },
+  {
+    client: "My own account · @adinacall",
+    business: "Personal brand",
+    services: ["Social media strategy", "Content"],
+    problem: "Coming home from a long military deployment to an account with under 1,000 followers.",
+    built: "A creative social media strategy and content plan, built to reach the right people instead of chasing every trend.",
+    results: ["5.7M views on one video", "Under 1,000 to 20,000 followers in 3 days"],
+    cover: { src: "/images/work/adina-instagram.jpg", alt: "Adina Call's Instagram profile showing 21K followers", width: 333, height: 723, fit: "contain" },
   },
 ];
 
@@ -558,13 +621,85 @@ export const finalCta = {
   signature: "xo, Adina",
 };
 
-export const agencyLine = "Need the website, the ads or the funnel too? We build those as well.";
+export const agencyLine = "Need the website, the app or the funnel too? We build those as well.";
+export const agencyLink = { label: "See apps & websites", href: "/apps-and-websites" };
+
+/** Adina's personal site, cross-linked from Apps & Websites, About and the footer. */
+export const personalSite = { label: "adinacall.com", href: "https://www.adinacall.com" };
+
+/** Apps & Websites page. */
+export const apps = {
+  header: {
+    title: "Apps & websites",
+    subtitle:
+      "Custom apps and websites built around how your customers actually move, and how your team actually works.",
+  },
+  servicesTitle: "What I build",
+  services: [
+    {
+      title: "Websites that work as hard as you do",
+      body: "Fast, mobile-first, SEO-ready sites with one clear path to book or buy. Built on the same modern stack as this site.",
+    },
+    {
+      title: "Custom apps",
+      body: "Client portals, booking flows, dashboards and lead-response apps that text you the moment a new lead comes in, with the score and the script.",
+    },
+    {
+      title: "Guest and customer experience apps",
+      body: "Itineraries, concierge requests and member hubs for hospitality, events and service brands. Your brand, in your customer's pocket.",
+    },
+    {
+      title: "Funnels and landing pages",
+      body: "The kind of pages behind two Two Comma Club awards: offers, opt-ins and sales pages built to convert, then tested and improved.",
+    },
+  ],
+  workTitle: "Recent builds",
+  work: [
+    {
+      client: "Cell Regen",
+      services: ["Web development"],
+      url: "https://cellregenwellness.com",
+      domain: "cellregenwellness.com",
+      image: { src: "/images/work/cell-regen-site.jpg", alt: "Cell Regen website home page with the large CELL REGEN headline over the clinic interior", width: 1200, height: 675 },
+      body: "The website for my own wellness clinic in Hood River, Oregon. Members, services, events, retreats, scheduling and a shop in one place, plus the blog our SEO Manager digital employee writes for.",
+    },
+    {
+      client: "NEU Wellness · Dr. Ali Hamtaee",
+      services: ["Branding", "Web development"],
+      url: "https://neuwc.com",
+      domain: "neuwc.com",
+      image: { src: "/images/work/neu-wellness-site.jpg", alt: "NEU Wellness website home page with the gold neu logo and the headline From Pain and Frustration to Lifelong Strength", width: 1200, height: 675 },
+      body: "A brand relaunch and new website for a two-location practice in Florida, built for its move from insurance collections to a cash-based wellness center.",
+    },
+  ],
+  pairing: {
+    title: "Built to work with your digital employees",
+    body: "Every app and site I build can plug into a digital employee. Your Lead Response hire answers the form. Your SEO Manager publishes to the blog. Your Executive Assistant keeps the calendar full. The site stops being a brochure and starts doing work.",
+    link: { label: "Meet the digital employees", href: "/digital-employees" },
+  },
+  processTitle: "How a build works",
+  process: [
+    { title: "Strategy call", body: "We talk through your business, your customers and what the app or site needs to do." },
+    { title: "Custom proposal", body: "You get the scope, the timeline and the investment in writing before anything starts." },
+    { title: "Design and build", body: "You review it as it comes together, so there are no surprises at launch." },
+    { title: "Launch and care", body: "We go live, hand it off, and keep it running month to month if you want support." },
+  ],
+  moreWork: {
+    title: "See more of my work",
+    body: "Branding, social and funnel results are on the Results page, and more of my story is at adinacall.com.",
+    links: [
+      { label: "See all results", href: "/results" },
+      { label: "adinacall.com", href: "https://www.adinacall.com" },
+    ],
+  },
+};
 
 export const footer = {
   tagline: "AI digital employees built on KPIs for founders, owners, marketers and creatives.",
   links: [
     { label: "Digital Employees", href: "/digital-employees" },
     { label: "How It Works", href: "/how-it-works" },
+    { label: "Apps & Websites", href: "/apps-and-websites" },
     { label: "Pricing", href: "/pricing" },
     { label: "Results", href: "/results" },
     { label: "About", href: "/about" },

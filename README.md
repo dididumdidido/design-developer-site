@@ -27,3 +27,26 @@ npm run dev
 ## Included
 - `app/robots.ts`, `app/sitemap.ts`, `app/icon.png`, `app/opengraph-image.png` (share image), `app/not-found.tsx` (branded 404), `app/privacy/page.tsx`
 
+## Blog (for your SEO digital employee)
+Posts are Markdown files in `content/blog/`. One file = one post; the file name is the URL (`content/blog/my-post.md` → `/blog/my-post`).
+
+```
+---
+title: "Post title"
+description: "About 150 characters for Google."
+date: "2026-12-01"
+author: "Adina Call"
+tags: ["Digital employees"]
+draft: false
+---
+
+Post body in Markdown. Use ## for section headings, **bold**, - lists, and [links](/book).
+```
+
+Publishing pipeline: the digital employee drafts → you approve (Slack / Notion) → it commits the `.md` file to `content/blog/` on the `main` branch of the GitHub repo → Vercel redeploys automatically. Set `draft: true` to hold a post. The sitemap, Google metadata and BlogPosting markup are generated automatically.
+
+## Partner program (referral links)
+Give each partner a code, e.g. AMY → `https://www.design-developer.com/?ref=AMY` (any page works).
+The code is saved for 90 days (first referrer wins). When that visitor books on /book, Calendly receives
+`utm_source=partner&utm_campaign=AMY` — you'll see it in the booking details and in Calendly's routing/reporting.
+Terms and examples live in `partners` in `lib/content.ts`.

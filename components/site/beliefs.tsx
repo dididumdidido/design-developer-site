@@ -14,7 +14,7 @@ export function Beliefs() {
             <ul className="space-y-4">
               {beliefs.points.map((pt) => (
                 <li key={pt} className="flex items-start gap-3 font-display text-xl leading-snug text-ink">
-                  <span className="mt-2.5 size-2 shrink-0 rounded-full bg-primary" aria-hidden />
+                  <span className="mt-2.5 size-2 shrink-0 rounded-full bg-ink" aria-hidden />
                   {pt}
                 </li>
               ))}

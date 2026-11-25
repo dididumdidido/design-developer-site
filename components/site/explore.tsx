@@ -17,7 +17,7 @@ export function Explore() {
               >
                 <span className="font-display text-2xl font-medium text-ink">{item.title}</span>
                 <span className="text-[16px] leading-relaxed text-soft">{item.text}</span>
-                <span className="inline-flex items-center gap-1.5 text-[15px] font-semibold text-primary">
+                <span className="inline-flex items-center gap-1.5 text-[15px] font-semibold text-accent-ink">
                   Open <ArrowRight className="size-4" aria-hidden />
                 </span>
               </a>

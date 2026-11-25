@@ -10,7 +10,7 @@ export function HowItWorks() {
         <ol className="mt-12 grid gap-8 border-t border-border pt-8 md:grid-cols-3 md:gap-10">
           {howItWorks.steps.map((s, i) => (
             <li key={s.title}>
-              <span className="font-display text-4xl font-semibold text-primary">
+              <span className="font-display text-4xl font-semibold text-accent-ink">
                 {i + 1}
               </span>
               <h3 className="display mt-3 text-xl">

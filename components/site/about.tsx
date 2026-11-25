@@ -16,7 +16,7 @@ export function About({ asPageTitle = false }: { asPageTitle?: boolean }) {
           sizes="(min-width: 1024px) 440px, 90vw"
           className="mx-auto aspect-[4/5] w-full max-w-md rounded-lg border border-border object-cover object-[center_40%] lg:max-w-none"
         />
-        <div className="lg:pt-6">
+        <div className="order-first lg:order-none lg:pt-6">
           <H className="display text-3xl leading-tight sm:text-[2.6rem]">{about.title}</H>
           {about.paragraphs.map((p) => (
             <p key={p} className="mt-5 text-lg leading-relaxed text-soft">

@@ -19,7 +19,7 @@ export const site = {
   email: "contact@design-developer.com",
   ctaLabel: "Book Your Free Strategy Call",
   /** Paste your Calendly or GoHighLevel booking URL here, e.g. "https://calendly.com/you/strategy-call". */
-  calendarEmbedUrl: "https://calendly.com/contact-adinacall/30min",
+  calendarEmbedUrl: "https://calendly.com/contact-adinacall/free-strategy-call-with-adina",
 };
 
 /** Where every booking button goes: the calendar if connected, otherwise a pre-filled email. */
@@ -35,7 +35,7 @@ export const offer = {
   /** Price anchor shown in the FAQ and comparison table. Leave empty to hide. */
   priceAnchor: "About one month of a top employee's salary",
   /** How long until clients see results. */
-  resultsTimeline: "90 days",
+  resultsTimeline: "30 to 90 days",
 };
 
 export const seo = {
@@ -101,11 +101,73 @@ export const pages = {
     title: "About Adina Call | Design Developer",
     description: "Founder Adina Call: 2x ClickFunnels Two Comma Club, 10+ years in marketing, Air Force Reserve. AI as support, not replacement.",
   },
+  pricing: {
+    path: "/pricing",
+    title: "Pricing: Digital Employees from $1,000/year | Design Developer",
+    description: "Transparent digital employee pricing, sized by the tools it works in. Nano to Large, pay annually or setup + month to month. No lock-in.",
+  },
+  partners: {
+    path: "/partners",
+    title: "Partner Program: Earn 15% | Design Developer",
+    description: "Refer founders and owners to Design Developer and earn 15% of their first payment, plus 15% of every monthly payment while they stay on.",
+  },
   book: {
     path: "/book",
     title: "Book Your Free Strategy Call | Design Developer",
     description: "A free 30-minute strategy call. Map your busywork, pick your first digital employee and its KPIs. Low pressure.",
   },
+};
+
+/** Pricing page (matches the Digital Employee Pricing Guide PDF). */
+export const pricing = {
+  title: "Pricing",
+  subtitle: "Priced per digital employee, sized by the tools it works in. Pay once a year, or start with a setup fee and go month to month.",
+  tiers: [
+    { name: "Nano", tools: "1 tool", avatar: "/images/team/linkedin-writer.jpg", example: "LinkedIn content writer", exampleTools: "LinkedIn", annual: 1000, setup: 500, monthly: 100 },
+    { name: "Small", tools: "2 tools", avatar: "/images/team/follow-up-assistant.jpg", example: "Follow-up assistant", exampleTools: "Call recorder, email", annual: 2000, setup: 1000, monthly: 200 },
+    { name: "Medium", tools: "3–4 tools", avatar: "/images/team/podcast-booker.jpg", example: "Podcast guest booker", exampleTools: "Podcast directory, email, calendar, tracking sheet", annual: 4000, setup: 2000, monthly: 400 },
+    { name: "Large", tools: "5–8 tools", avatar: "/images/team/seo-manager.jpg", example: "SEO Manager", exampleTools: "Search Console, Analytics, keyword tool, website, report sheet", annual: 8000, setup: 4000, monthly: 800 },
+  ],
+  included: [
+    "Scoping on a free strategy call",
+    "Connecting every tool it works in",
+    "The build, trained on your voice and offers",
+    "A job description and KPI",
+    "A launch walkthrough for you and your team",
+    "Ongoing support from our team",
+  ],
+  faq: [
+    { q: "What counts as a tool?", a: "A business app your digital employee works in, like your email, calendar, CRM or Search Console. Slack, the AI model, hosting and web search don't count." },
+    { q: "Who decides the size?", a: "We do, on the strategy call. We name the job, list every tool it touches, and that count sets the size. If it's really three jobs, it's three digital employees." },
+    { q: "Which option should I pick?", a: "Paying annually is the lowest total cost. Setup + monthly is the lower first payment: the setup fee is half the annual price and covers months 1–3, then 10% of the annual price each month." },
+    { q: "Is there a contract or lock-in?", a: "No lock-in. With setup + monthly you go month to month from month 4." },
+    { q: "Are there other costs?", a: "Yes, and we tell you up front. Running costs like AI usage and your own app subscriptions are billed by those providers. Our prices cover the build and support." },
+    { q: "Can I hire more than one?", a: "Yes. One job each, as many as your business needs. We recommend starting with the most painful job, proving it works, then adding the next. Larger teams are quoted case by case." },
+    { q: "How long until it's live, and when will I see results?", a: "Most are built in about 2 weeks. Results usually show in 30 to 90 days, depending on the role." },
+  ],
+};
+
+/** Partner (affiliate) program. */
+export const partners = {
+  title: "Partner program",
+  subtitle: "Know a founder, owner or creative who's drowning in busywork? Send them our way. When they hire a digital employee, you earn 15%.",
+  terms: [
+    { title: "15% of the first payment", text: "When your referral pays for a build, annually or with a setup fee, you earn 15% of that payment." },
+    { title: "15% of every monthly payment", text: "If they go month to month after setup, you earn 15% of each monthly payment for as long as that account stays on." },
+    { title: "Your own referral link", text: "You get a link like design-developer.com/?ref=YOURNAME. Anyone who books through it within 90 days is credited to you." },
+  ],
+  examples: [
+    { label: "They choose Small, paid annually", detail: "$2,000 build", earn: "$300" },
+    { label: "They choose Medium, setup + monthly", detail: "$2,000 setup, then $400/mo", earn: "$300, then $60/mo" },
+    { label: "They choose Large, setup + monthly", detail: "$4,000 setup, then $800/mo", earn: "$600, then $120/mo" },
+  ],
+  fine: [
+    "Commission is earned when the client you referred pays, and is based on our build and support fees (not running costs like AI usage).",
+    "Credit goes to the first partner link a client used, within 90 days of their first visit.",
+    "Please let your audience know you earn a commission when you share your link.",
+  ],
+  applySubject: "Partner program application",
+  applyBody: "Hi Adina, I'd like to join the Design Developer partner program.\n\nName:\nBusiness / audience:\nWebsite or social:\nPreferred referral code (e.g. AMY):",
 };
 
 /** Home page: short guide to the child pages. */
@@ -114,7 +176,9 @@ export const explore = {
   items: [
     { title: "Digital Employees", text: "The roles you can hire, how each one grows, and how they compare to AI bots and VAs.", href: "/digital-employees" },
     { title: "How It Works", text: "Two ways to work together, the three steps, and where they sit on your org board.", href: "/how-it-works" },
+    { title: "Pricing", text: "Transparent pricing by size, from $1,000 a year per digital employee. No lock-in.", href: "/pricing" },
     { title: "Results", text: "Case studies and client stories, with real numbers.", href: "/results" },
+    { title: "Blog", text: "Practical posts on digital employees, KPIs and AI as support.", href: "/blog" },
     { title: "About Adina", text: "The founder behind it, and why AI should support people, not replace them.", href: "/about" },
   ],
 };
@@ -122,8 +186,10 @@ export const explore = {
 export const nav = [
   { label: "Digital Employees", href: "/digital-employees" },
   { label: "How It Works", href: "/how-it-works" },
+  { label: "Pricing", href: "/pricing" },
   { label: "Results", href: "/results" },
   { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export const hero = {
@@ -152,7 +218,7 @@ export const problem = {
     "Another hire? Another salary. Another schedule. Another training.",
     "And the AI tools that promised to save time? One more thing to manage.",
   ],
-  turn: "So ask who. A digital employee takes a seat on your org board, owns a KPI, and moves the work that keeps losing to the urgent.",
+  turn: "So the question isn't how. It's who. A digital employee takes a seat on your org board, owns a KPI, and moves the work that keeps losing to the urgent.",
 };
 
 /** Animated example conversation shown after the problem section. */
@@ -198,6 +264,7 @@ export const rolesIntro = {
 export const roles = [
   {
     role: "Lead Response Specialist",
+    avatar: "/images/team/lead-response.jpg",
     does: "Texts new leads in seconds with a lead score and next step, so no inquiry goes cold.",
     sample: {
       kind: "Text to a new lead",
@@ -206,6 +273,7 @@ export const roles = [
   },
   {
     role: "Executive Assistant",
+    avatar: "/images/team/executive-assistant.jpg",
     does: "Manages your inbox, calendar, and a daily briefing so you start every day focused.",
     sample: {
       kind: "7 am briefing",
@@ -214,16 +282,18 @@ export const roles = [
   },
   {
     role: "SEO Manager",
+    avatar: "/images/team/seo-manager.jpg",
     does: "Publishes optimized articles and tracks rankings so you get found on Google and in AI search.",
     sample: {
       kind: "Live now on cellregenwellness.com",
-      body: "“Hyperbaric Oxygen Therapy in Hood River: What to Know” · “Neurofeedback and Brain Health: A Guide” · “Understanding Metabolic Health and Weight Loss”",
+      body: "“What Is PEMF Therapy and How Does It Work?” · “What in the world is a cellular upgrade?” · “Deliberate Cold Exposure for Diabetes”",
       real: true,
-      link: "https://cellregenwellness.com",
+      link: "https://cellregenwellness.com/blog/",
     },
   },
   {
     role: "Content Creator",
+    avatar: "/images/team/content-creator.jpg",
     does: "Turns your ideas into posts, emails, and scripts on a consistent publishing rhythm.",
     sample: {
       kind: "Draft for your review",
@@ -232,6 +302,7 @@ export const roles = [
   },
   {
     role: "Marketing Manager",
+    avatar: "/images/team/marketing-manager.jpg",
     does: "Plans campaigns, coordinates channels, and reports on what's actually driving revenue.",
     sample: {
       kind: "Monthly summary",
@@ -240,6 +311,7 @@ export const roles = [
   },
   {
     role: "Operations Manager",
+    avatar: "/images/team/operations-manager.jpg",
     does: "Keeps processes moving, follows up on open loops, and flags issues before they grow.",
     sample: {
       kind: "Open-loop alert",
@@ -304,7 +376,7 @@ export const howItWorks = {
     },
     {
       title: "It goes live",
-      body: "It starts working the queue. You review its KPIs weekly. Plan on about 90 days to see results.",
+      body: "Most are built in about 2 weeks. Then it starts working the queue, and you review its KPIs weekly. Results usually show in 30 to 90 days.",
     },
   ],
 };
@@ -313,7 +385,7 @@ export const compare = {
   title: "A chatbot reads a script. A digital employee works the queue.",
   columns: ["Design Developer", "A virtual assistant", "AI bots and tools"],
   rows: [
-    { label: "Cost", values: ["Custom proposal, about one month of a top hire's salary", "Ongoing hourly or monthly pay", "Subscriptions plus your time"] },
+    { label: "Cost", values: ["From $1,000/year per digital employee", "Ongoing hourly or monthly pay", "Subscriptions plus your time"] },
     { label: "Built on KPIs", values: ["Yes, reviewed weekly", "Depends on the hire", "No, you track it"] },
     { label: "Your workload", values: ["Goes down", "Management time", "Often goes up"] },
     { label: "On your org board", values: ["Yes, with a defined role", "Yes", "No"] },
@@ -336,6 +408,9 @@ export const testimonials: {
   city?: string;
   photo?: Photo;
   stars?: number;
+  website?: string;
+  /** false keeps this quote off the home page (it still shows on /results). */
+  homepage?: boolean;
   /** Shown in small print under the quote. */
   disclaimer?: string;
 }[] = [
@@ -346,12 +421,15 @@ export const testimonials: {
     business: "Chiropractor & Clinic Owner (Adina's husband)",
     photo: { src: "/images/bryan-call.jpg", alt: "Dr. Bryan Call smiling in his clinic", width: 400, height: 400 },
     stars: 5,
+    homepage: false,
     disclaimer: "Results not typical. Individual results will vary based on effort, experience, and market conditions.",
   },
   {
     quote:
       "Adina was wonderful to work with! She is very passionate about how my business could make money and has been thorough in her research. I'm extremely happy with my deliverables and her work!",
     name: "Momoko Fritz",
+    business: "MomokoFritz Photography",
+    website: "https://www.momoko-fritz.com/",
     photo: { src: "/images/momoko-fritz.jpg", alt: "Momoko Fritz with her camera", width: 400, height: 400 },
   },
 ];
@@ -439,15 +517,11 @@ export const faq = {
   items: [
     {
       q: "What does it cost?",
-      a: offer.priceAnchor
-        ? "Pricing depends on an evaluation of your company and a custom proposal. As a guide, it's about what you'd pay a top employee for one month: roughly $8,300 for a $100K-a-year role. You'll have your proposal before anything is built."
-        : "It depends on which roles you hire. You'll get a clear price on the strategy call, before anything is built.",
+      a: "Each digital employee is priced by size, based on how many tools it works in: from $1,000 a year (Nano) to $8,000 a year (Large), or a setup fee then $100 to $800 a month. See the full breakdown on our pricing page.",
     },
     {
       q: "How long until it's live?",
-      a: offer.goLiveDays
-        ? `Most digital employees are live within ${offer.goLiveDays} days of the strategy call.`
-        : "We'll give you a timeline on the call. Your first role is built and trained before it touches a single lead.",
+      a: "Most digital employees are built and live in about 2 weeks. More complex roles can take a little longer, and you'll know the timeline in your proposal.",
     },
     {
       q: "How is this different from an AI bot?",
@@ -455,7 +529,7 @@ export const faq = {
     },
     {
       q: "When will I see results?",
-      a: `Plan on about ${offer.resultsTimeline}. Your digital employee gets better every week as it learns your business, your customers and what works.`,
+      a: `Usually ${offer.resultsTimeline}, depending on the role. A lead-response role tends to show results sooner than an SEO role. It gets better every week as it learns your business, your customers and what works.`,
     },
     {
       q: "What data does it access, and who can see it?",
@@ -467,7 +541,7 @@ export const faq = {
     },
     {
       q: "Is there a long-term contract?",
-      a: "We'll walk through the terms on the call so you know exactly what you're agreeing to before you start.",
+      a: "No lock-in. Pay annually for the lowest total cost, or pay a setup fee that covers months 1–3 and then go month to month. Running costs like AI usage and your own app subscriptions are separate.",
     },
   ],
 };
@@ -480,7 +554,7 @@ export const finalCta = {
     "Your first digital employee and the KPIs it will own.",
     "A custom proposal if it's a fit. No pressure if it isn't.",
   ],
-  ps: "P.S. If you're like me, you've tried the AI tools and ended up with more on your plate. That's exactly why I build these. Bring your numbers to the call. Trust the numbers. Not the pitch.",
+  ps: "P.S. If you're like me, you've tried the AI tools and ended up with more on your plate. That's exactly why I build these. Bring your numbers to the call and we'll look at them together.",
   signature: "xo, Adina",
 };
 
@@ -491,8 +565,11 @@ export const footer = {
   links: [
     { label: "Digital Employees", href: "/digital-employees" },
     { label: "How It Works", href: "/how-it-works" },
+    { label: "Pricing", href: "/pricing" },
     { label: "Results", href: "/results" },
     { label: "About", href: "/about" },
+    { label: "Blog", href: "/blog" },
+    { label: "Partners", href: "/partners" },
     { label: "Book a Call", href: "/book" },
     { label: "FAQ", href: "/book#faq" },
     { label: "Privacy", href: "/privacy" },

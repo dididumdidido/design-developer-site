@@ -8,6 +8,8 @@ import { caseStudies, resultsIntro, testimonials } from "@/lib/content";
 export function Results({ variant = "full" }: { variant?: "full" | "testimonials" }) {
   if (testimonials.length === 0 && caseStudies.length === 0) return null;
   const showCases = variant === "full";
+  const quotes = showCases ? testimonials : testimonials.filter((t) => t.homepage !== false);
+  if (!showCases && quotes.length === 0) return null;
 
   return (
     <section id="results" className="py-16 lg:py-24">
@@ -29,7 +31,7 @@ export function Results({ variant = "full" }: { variant?: "full" | "testimonials
                     href={c.website}
                     target="_blank"
                     rel="noopener"
-                    className="inline-block py-3 text-[14px] font-semibold text-primary hover:underline"
+                    className="inline-block py-3 text-[14px] font-semibold text-accent-ink hover:underline"
                   >
                     {c.website.replace("https://", "")} ↗
                   </a>
@@ -65,19 +67,19 @@ export function Results({ variant = "full" }: { variant?: "full" | "testimonials
           </div>
         )}
 
-        {testimonials.length > 0 && (
-          <div className={(showCases ? "mt-5" : "mt-10") + " grid gap-5 " + (testimonials.length === 1 ? "" : testimonials.length === 2 ? "md:grid-cols-2" : "md:grid-cols-2 lg:grid-cols-3")}>
-            {testimonials.map((t) => (
+        {quotes.length > 0 && (
+          <div className={(showCases ? "mt-5" : "mt-10") + " grid gap-5 " + (quotes.length === 1 ? "" : quotes.length === 2 ? "md:grid-cols-2" : "md:grid-cols-2 lg:grid-cols-3")}>
+            {quotes.map((t) => (
               <figure key={t.name} className="surface flex flex-col p-7">
                 {t.stars && (
-                  <p className="mb-3 text-lg tracking-[0.15em] text-primary" aria-label={`${t.stars} out of 5 stars`}>
+                  <p className="mb-3 text-lg tracking-[0.15em] text-accent-ink" aria-label={`${t.stars} out of 5 stars`}>
                     {"★".repeat(t.stars)}
                   </p>
                 )}
                 <blockquote
                   className={
                     "flex-1 leading-relaxed text-ink " +
-                    (testimonials.length <= 2 ? "font-display text-lg sm:text-xl" : "text-[16px]")
+                    (quotes.length <= 2 ? "font-display text-lg sm:text-xl" : "text-[16px]")
                   }
                 >
                   “{t.quote}”
@@ -95,7 +97,13 @@ export function Results({ variant = "full" }: { variant?: "full" | "testimonials
                   <span className="text-[14px] leading-snug">
                     <span className="block font-semibold text-ink">{t.name}</span>
                     <span className="text-soft">
-                      {[t.business, t.city].filter(Boolean).join(", ") || "Client"}
+                      {t.website ? (
+                        <a href={t.website} target="_blank" rel="noopener" className="underline-offset-2 hover:text-accent-ink hover:underline">
+                          {[t.business, t.city].filter(Boolean).join(", ")}
+                        </a>
+                      ) : (
+                        [t.business, t.city].filter(Boolean).join(", ") || "Client"
+                      )}
                     </span>
                   </span>
                 </figcaption>

@@ -11,7 +11,7 @@ export function CtaBand() {
             <h2 className="display text-3xl text-white sm:text-4xl">{finalCta.title}</h2>
             <p className="mt-3 text-[16px] text-zinc-300">{hero.microcopy}</p>
           </div>
-          <BookButton className="shrink-0" />
+          <BookButton className="shrink-0 bg-neon text-ink [@media(hover:hover)]:hover:bg-[#d8f05f]" />
         </div>
       </Container>
     </section>

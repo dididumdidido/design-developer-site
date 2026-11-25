@@ -15,7 +15,7 @@ export function Compare() {
               <dl className="divide-y divide-border text-[15px]">
                 {row.values.map((v, i) => (
                   <div key={i} className={"flex justify-between gap-4 px-5 py-3 " + (i === 0 ? "bg-tint" : "")}>
-                    <dt className={i === 0 ? "font-semibold text-primary" : "text-soft"}>{compare.columns[i]}</dt>
+                    <dt className={i === 0 ? "font-semibold text-accent-ink" : "text-soft"}>{compare.columns[i]}</dt>
                     <dd className={"text-right " + (i === 0 ? "font-medium text-ink" : "text-soft")}>{v}</dd>
                   </div>
                 ))}
@@ -36,7 +36,7 @@ export function Compare() {
                   <th
                     key={c}
                     scope="col"
-                    className={i === 0 ? "bg-tint p-5 font-semibold text-primary" : "p-5 font-semibold text-ink"}
+                    className={i === 0 ? "bg-tint p-5 font-semibold text-accent-ink" : "p-5 font-semibold text-ink"}
                   >
                     {c}
                   </th>

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Container, SectionTitle } from "@/components/site/shared";
 import { roles, rolesIntro } from "@/lib/content";
 
@@ -10,13 +12,22 @@ export function Roles() {
           {roles.map((r) => (
             <li key={r.role} className="grid gap-5 py-8 md:grid-cols-[1fr_1.1fr] md:gap-12">
               <div>
-                <h3 className="display text-2xl">{r.role}</h3>
+                <div className="flex items-center gap-4">
+                  <Image
+                    src={r.avatar}
+                    alt={`Illustrated ${r.role} digital employee`}
+                    width={200}
+                    height={200}
+                    className="size-16 shrink-0 rounded-full border border-border object-cover"
+                  />
+                  <h3 className="display text-2xl">{r.role}</h3>
+                </div>
                 <p className="mt-2 max-w-md text-[16px] leading-relaxed text-soft">{r.does}</p>
               </div>
-              <figure className={"rounded-xl p-5 " + ("real" in r.sample ? "border border-primary/25 bg-tint" : "bg-muted")}>
+              <figure className={"rounded-xl p-5 " + ("real" in r.sample ? "border border-[#c8dc5e] bg-tint" : "bg-muted")}>
                 <figcaption
                   className={
-                    "text-[13px] font-semibold " + ("real" in r.sample ? "text-primary" : "text-soft")
+                    "text-[13px] font-semibold " + ("real" in r.sample ? "text-accent-ink" : "text-soft")
                   }
                 >
                   {"real" in r.sample ? r.sample.kind : `Example: ${r.sample.kind.charAt(0).toLowerCase() + r.sample.kind.slice(1)}`}
@@ -27,7 +38,7 @@ export function Roles() {
                     href={r.sample.link}
                     target="_blank"
                     rel="noopener"
-                    className="mt-1 inline-block py-3 text-[14px] font-semibold text-primary hover:underline"
+                    className="mt-1 inline-block py-3 text-[14px] font-semibold text-accent-ink hover:underline"
                   >
                     See it live ↗
                   </a>

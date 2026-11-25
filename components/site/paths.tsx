@@ -18,7 +18,7 @@ export function Paths() {
                 key={o.name}
                 className={cn(
                   "flex flex-col rounded-2xl border p-8 sm:p-10",
-                  featured ? "border-primary bg-tint" : "border-border bg-white"
+                  featured ? "border-ink bg-tint" : "border-border bg-white"
                 )}
               >
                 <h3 className="display text-3xl">{o.name}</h3>
@@ -26,7 +26,7 @@ export function Paths() {
                 <ul className="mt-7 flex-1 space-y-3">
                   {o.points.map((pt) => (
                     <li key={pt} className="flex gap-3 text-[16px] leading-relaxed text-body">
-                      <Check className="mt-1 size-4 shrink-0 text-primary" aria-hidden />
+                      <Check className="mt-1 size-4 shrink-0 text-accent-ink" aria-hidden />
                       {pt}
                     </li>
                   ))}

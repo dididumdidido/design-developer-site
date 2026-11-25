@@ -47,7 +47,7 @@ export function OrgBoard() {
               key={s.name}
               className={cn(
                 "rounded-md border px-3 py-4 text-center transition-[opacity,transform] duration-500 ease-out",
-                digital ? "border-primary/30 bg-tint" : "border-border bg-white",
+                digital ? "border-[#c8dc5e] bg-tint" : "border-border bg-white",
                 hidden ? "translate-y-3 border-dashed opacity-0" : "translate-y-0 opacity-100",
                 i === n - 1 && n % 2 === 1 ? "col-span-2 sm:col-span-1" : ""
               )}
